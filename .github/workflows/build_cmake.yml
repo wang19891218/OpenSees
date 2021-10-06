@@ -15,9 +15,10 @@ jobs:
     name: Ubuntu bundled build
     runs-on: ubuntu-latest
     steps:
-    #- uses: claudioperez/OpenSees@cmake-build
+    - uses: claudioperez/OpenSees@cmake-build
     - uses: actions/checkout@v2
       # with: {ref: cmake-build}
+    - uses: lhotari/action-upterm@v1
 
     - name: Install Tcl
       run: |
@@ -30,16 +31,16 @@ jobs:
         sudo apt-get install g++
         sudo apt-get install gfortran
         sudo apt-get install python3-dev
-        uses: lhotari/action-upterm@v1
-
-    - name: Build
-      run: |
-        git checkout v3.3.0
-        mkdir build
         
-        cd build
-        cmake ..
-        cmake --build . --target OpenSeesTcl -j5
+
+#     - name: Build
+#       run: |
+#         git checkout v3.3.0
+#         mkdir build
+        
+#         cd build
+#         cmake ..
+#         cmake --build . --target OpenSeesTcl -j5
 
 # Not building on Windows until we can figure out how to use Fortran
 # with Github Actions
