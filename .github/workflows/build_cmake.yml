@@ -2,8 +2,9 @@
 name: Make Build
 
 env:
-  #   CMAKE_VERSION: 3.20.1 
+  # CMAKE_VERSION: 3.20.1 
   # BUILD_TYPE: Debug
+  USERNAME: wang19891218
 
 on:
   workflow_dispatch
