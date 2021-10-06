@@ -29,6 +29,7 @@ jobs:
 
     - name: Build
       run: |
+        git pull
         git checkout tags/v3.2.0
         mkdir $HOME/bin
         mkdir $HOME/lib
