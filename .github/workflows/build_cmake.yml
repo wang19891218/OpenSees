@@ -25,6 +25,7 @@ jobs:
 
     - name: Build
       run: |
+        git checkout v3.3.0
         mkdir build
         cd build
         cmake ..
