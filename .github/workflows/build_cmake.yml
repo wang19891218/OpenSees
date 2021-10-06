@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: claudioperez/OpenSees@cmake-build
       with: {ref: cmake-build}
-    - uses: lhotari/action-upterm@v1
+    # - uses: lhotari/action-upterm@v1
 
     - name: Install Tcl
       run: |
@@ -33,14 +33,14 @@ jobs:
         sudo apt-get install python3-dev
         
 
-#     - name: Build
-#       run: |
-#         git checkout v3.3.0
-#         mkdir build
+    - name: Build
+      run: |
+        git checkout v3.3.0
+        mkdir build
         
-#         cd build
-#         cmake ..
-#         cmake --build . --target OpenSeesTcl -j5
+        cd build
+        cmake ..
+        cmake --build . --target OpenSeesTcl -j5
 
 # Not building on Windows until we can figure out how to use Fortran
 # with Github Actions
