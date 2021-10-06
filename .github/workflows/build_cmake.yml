@@ -23,7 +23,7 @@ jobs:
     - name: Install Tcl
       run: |
         sudo apt-get install tcl-dev libmysqlclient-dev \
-          make tcl8.6 tcl8.6-dev gcc g++ gfortran python3-dev
+          make tcl8.6 tcl8.6-dev gcc g++ gfortran python3-dev libatlas-base-dev 
 
     - name: Build
       run: |
