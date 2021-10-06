@@ -15,9 +15,9 @@ jobs:
     name: Ubuntu bundled build
     runs-on: ubuntu-latest
     steps:
-    - uses: claudioperez/OpenSees@cmake-build
     - uses: actions/checkout@v2
-      # with: {ref: cmake-build}
+    - uses: claudioperez/OpenSees@cmake-build
+      with: {ref: cmake-build}
     - uses: lhotari/action-upterm@v1
 
     - name: Install Tcl
