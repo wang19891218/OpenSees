@@ -20,12 +20,13 @@ jobs:
       # with: {ref: cmake-build}
 
     - name: Install Tcl
-      run:
+      run: |
         sudo apt-get install tcl-dev
+        sudo apt-get install libmysqlclient-dev
 
     - name: Build
       run: |
-        git checkout v3.3.0
+        # git checkout v3.3.0
         mkdir build
         cd build
         cmake ..
