@@ -23,11 +23,20 @@ jobs:
       run: |
         sudo apt-get install tcl-dev
         sudo apt-get install libmysqlclient-dev
+        sudo apt-get install make
+        sudo apt-get install tcl8.6
+        sudo apt-get install tcl8.6-dev
+        sudo apt-get install gcc
+        sudo apt-get install g++
+        sudo apt-get install gfortran
+        sudo apt-get install python3-dev
+        uses: lhotari/action-upterm@v1
 
     - name: Build
       run: |
-        # git checkout v3.3.0
+        git checkout v3.3.0
         mkdir build
+        
         cd build
         cmake ..
         cmake --build . --target OpenSeesTcl -j5
