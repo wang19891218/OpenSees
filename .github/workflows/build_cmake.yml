@@ -32,7 +32,7 @@ jobs:
 
     - name: Build
       run: |
-        git pull
+        # git pull
         git checkout tags/$OPENSEESVERSOIN
         mkdir $HOME/bin
         mkdir $HOME/lib
