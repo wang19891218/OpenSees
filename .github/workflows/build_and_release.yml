@@ -53,6 +53,7 @@ jobs:
         # # tar czvf $HOME/OpenSees_$OPENSEESVERSOIN.tar.gz OpenSees_$OPENSEESVERSOIN
         # zip -r --compression-method store  $HOME/OpenSees_$OPENSEESVERSOIN.zip $HOME/OpenSees_$OPENSEESVERSOIN
         touch $HOME/OpenSees_$OPENSEESVERSOIN.zip
+        cat "asdlkfjawe;lfkja;" > $HOME/OpenSees_$OPENSEESVERSOIN.zip
 
 #     - name: Create Release
 #       id: create_release
