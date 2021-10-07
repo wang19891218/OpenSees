@@ -32,57 +32,34 @@ jobs:
     - name: Build
       run: |
         # git pull
-        # git checkout tags/$OPENSEESVERSOIN
-        # mkdir $HOME/bin
-        # mkdir $HOME/lib
-        # cp -r ../OpenSees $HOME/
+        git checkout tags/$OPENSEESVERSOIN
+        mkdir $HOME/bin
+        mkdir $HOME/lib
+        cp -r ../OpenSees $HOME/
         
-        # cp $HOME/OpenSees/MAKES/Makefile.def.EC2-UBUNTU $HOME/OpenSees/Makefile.def
-        # cd $HOME/OpenSees
+        cp $HOME/OpenSees/MAKES/Makefile.def.EC2-UBUNTU $HOME/OpenSees/Makefile.def
+        cd $HOME/OpenSees
         
-        # # ls -lah
-        # # cat Makefile.def
-        # sed -i 's/\.\/usr\/local/\/usr\/local/g' ./Makefile.def
-        # sed -i 's/\.\/home/\/home\/runner/g' ./Makefile.def
+        # ls -lah
+        # cat Makefile.def
+        sed -i 's/\.\/usr\/local/\/usr\/local/g' ./Makefile.def
+        sed -i 's/\.\/home/\/home\/runner/g' ./Makefile.def
         
-        # make
+        make
         
-        # mkdir $HOME/OpenSees_$OPENSEESVERSOIN
-        # mv $HOME/bin $HOME/OpenSees_$OPENSEESVERSOIN/
-        # mv $HOME/lib $HOME/OpenSees_$OPENSEESVERSOIN/
-        # # tar czvf $HOME/OpenSees_$OPENSEESVERSOIN.tar.gz OpenSees_$OPENSEESVERSOIN
-        # zip -r --compression-method store  $HOME/OpenSees_$OPENSEESVERSOIN.zip $HOME/OpenSees_$OPENSEESVERSOIN
-        touch $HOME/OpenSees_$OPENSEESVERSOIN.zip
-        echo "xxxxxxxxxxxxxxxxxxxxxxxxxx" > $HOME/OpenSees_$OPENSEESVERSOIN.zip
+        mkdir $HOME/OpenSees_$OPENSEESVERSOIN
+        mv $HOME/bin $HOME/OpenSees_$OPENSEESVERSOIN/
+        mv $HOME/lib $HOME/OpenSees_$OPENSEESVERSOIN/
+        # tar czvf $HOME/OpenSees_$OPENSEESVERSOIN.tar.gz OpenSees_$OPENSEESVERSOIN
+        zip -r --compression-method store  $HOME/OpenSees_$OPENSEESVERSOIN.zip $HOME/OpenSees_$OPENSEESVERSOIN
+        # touch $HOME/OpenSees_$OPENSEESVERSOIN.zip
+        # echo "xxxxxxxxxxxxxxxxxxxxxxxxxx" > $HOME/OpenSees_$OPENSEESVERSOIN.zip
 
-#     - name: Create Release
-#       id: create_release
-#       uses: actions/create-release@v1
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#       with:
-#         tag_name: ${{ env.OPENSEESVERSOIN }}
-#         release_name: Release ${{ env.OPENSEESVERSOIN }}
-#         draft: false
-#         prerelease: false
     - name: Release
       uses: softprops/action-gh-release@v1
       # if: startsWith(github.ref, 'refs/tags/')
       with:
         files: /home/runner/OpenSees_${{ env.OPENSEESVERSOIN}}.zip
-        name: OpenSees_${{ env.OPENSEESVERSOIN}} with binary
+        name: OpenSees ${{ env.OPENSEESVERSOIN}} with binary
         tag_name: ${{ env.OPENSEESVERSOIN}} 
         
-        
-
-#     - name: Upload Release Asset
-#       id: upload-release-asset 
-#       uses: actions/upload-release-asset@v1
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#       with:
-#         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-#         asset_path: /home/runner/OpenSees_${{ env.OPENSEESVERSOIN }}.zip
-#         asset_name: OpenSees_${{ env.OPENSEESVERSOIN }}.zip
-#         asset_content_type: application/zip
-       
