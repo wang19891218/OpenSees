@@ -70,6 +70,7 @@ jobs:
       with:
         files: /home/runner/${{ env.OPENSEESVERSOIN}}
         name: OpenSees_${{ env.OPENSEESVERSOIN}} with binary
+        tag_name: ${{ env.OPENSEESVERSOIN}} 
         
         
 
