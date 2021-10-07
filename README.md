@@ -1,5 +1,4 @@
-[![Make Build](https://github.com/wang19891218/OpenSees/actions/workflows/build_cmake.yml/badge.svg)](https://github.com/wang19891218/OpenSees/actions/workflows/build_cmake.yml)
-
+[![Make Build](https://github.com/wang19891218/OpenSees/actions/workflows/build_and_release.yml/badge.svg)](https://github.com/wang19891218/OpenSees/actions/workflows/build_and_release.yml)
 # OpenSees Source Code Repository
 
 This git repository contains all revisions to OpenSees source code since Version 2.3.2.
