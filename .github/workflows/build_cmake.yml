@@ -41,8 +41,8 @@ jobs:
         cp $HOME/OpenSees/MAKES/Makefile.def.EC2-UBUNTU $HOME/OpenSees/Makefile.def
         cd $HOME/OpenSees
         
-        ls -lah
-        cat Makefile.def
+        # ls -lah
+        # cat Makefile.def
         sed -i 's/\.\/usr\/local/\/usr\/local/g' ./Makefile.def                                  │·································
         sed -i 's/\.\/home/\/home/g' ./Makefile.def
         
