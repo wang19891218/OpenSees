@@ -54,21 +54,23 @@ jobs:
         # zip -r --compression-method store  $HOME/OpenSees_$OPENSEESVERSOIN.zip $HOME/OpenSees_$OPENSEESVERSOIN
         touch $HOME/OpenSees_$OPENSEESVERSOIN.zip
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ env.OPENSEESVERSOIN }}
-        release_name: Release ${{ env.OPENSEESVERSOIN }}
-        draft: false
-        prerelease: false
+#     - name: Create Release
+#       id: create_release
+#       uses: actions/create-release@v1
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       with:
+#         tag_name: ${{ env.OPENSEESVERSOIN }}
+#         release_name: Release ${{ env.OPENSEESVERSOIN }}
+#         draft: false
+#         prerelease: false
     - name: Release
       uses: softprops/action-gh-release@v1
       # if: startsWith(github.ref, 'refs/tags/')
       with:
         files: /home/runner/${{ env.OPENSEESVERSOIN}}
+        name: OpenSees_${{ env.OPENSEESVERSOIN}} with binary
+        
         
 
 #     - name: Upload Release Asset
