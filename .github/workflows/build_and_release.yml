@@ -68,7 +68,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       # if: startsWith(github.ref, 'refs/tags/')
       with:
-        files: /home/runner/${{ env.OPENSEESVERSOIN}}
+        files: /home/runner/OpenSees_${{ env.OPENSEESVERSOIN}}.zip
         name: OpenSees_${{ env.OPENSEESVERSOIN}} with binary
         tag_name: ${{ env.OPENSEESVERSOIN}} 
         
